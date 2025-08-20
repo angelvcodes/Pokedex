@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/features/data/models/pokemoncardmodel.dart';
+import 'package:pokedex/features/presentation/pages/pokedex.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'pokemoncardprovider.g.dart';
@@ -14,6 +15,7 @@ class PokemonCards extends _$PokemonCards {
       imageUrl: "lib/features/data/assets/pokeball.png",
       colorOne: Colors.red,
       colorTwo: Colors.redAccent,
+      page: const Pokedex(),
     ),
     PokemonCard(
       name: "Moves",
@@ -22,6 +24,7 @@ class PokemonCards extends _$PokemonCards {
       colorTwo: Colors.yellow.shade600,
     ),
     PokemonCard(
+      
       name: "Evolutions",
       imageUrl: "lib/features/data/assets/adn.png",
       colorOne: Colors.lightBlue,

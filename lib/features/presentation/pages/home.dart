@@ -47,6 +47,7 @@ class Home extends ConsumerWidget {
                   colorone: pokemon.colorOne,
                   colortwo: pokemon.colorTwo,
                   image: pokemon.imageUrl,
+                  page: pokemon.page,
                 );
               }, childCount: home.length),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -96,7 +97,7 @@ class Home extends ConsumerWidget {
       ),
 
       bottomNavigationBar: Navbar(
-        onHomeTap: () => print('Home'),
+        onHomeTap: () =>'',
         onLeftTap: () => print('Notifications'),
         onRightTap: () => print('User'),
       ),

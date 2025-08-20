@@ -5,24 +5,29 @@ class CardHome extends StatelessWidget {
   final String image;
   final Color colorone;
   final Color colortwo;
+  final Widget? page;
+
   const CardHome({
     super.key,
     required this.name,
     required this.image,
     required this.colorone,
     required this.colortwo,
+    this.page,
   });
 
   @override
   Widget build(BuildContext context) {
-
     final size = MediaQuery.of(context).size;
-
 
     return InkWell(
       onTap: () {
-        
-        
+        if (page != null) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => page!),
+          );
+        }
       },
       child: Stack(
         clipBehavior: Clip.none,
@@ -39,7 +44,11 @@ class CardHome extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
           ),
-          Positioned(top: size.height*-0.01, right: 0, child: Image.asset(image, height: 60)),
+          Positioned(
+            top: size.height * -0.01,
+            right: 0,
+            child: Image.asset(image, height: 60),
+          ),
           Positioned(
             top: 35,
             left: 20,
