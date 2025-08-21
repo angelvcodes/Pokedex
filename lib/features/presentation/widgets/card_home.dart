@@ -2,25 +2,23 @@ import 'package:flutter/material.dart';
 
 class CardHome extends StatelessWidget {
   final String name;
-  final String image;
   final Color colorone;
   final Color colortwo;
+  final String image;
   final Widget? page;
 
   const CardHome({
     super.key,
     required this.name,
-    required this.image,
     required this.colorone,
     required this.colortwo,
+    required this.image,
     this.page,
   });
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         if (page != null) {
           Navigator.push(
@@ -30,35 +28,68 @@ class CardHome extends StatelessWidget {
         }
       },
       child: Stack(
-        clipBehavior: Clip.none,
+        clipBehavior: Clip.none, 
         children: [
+          
           Container(
-            height: size.height * 0.14,
-            width: size.width * 0.44,
+            width: 160,
+            height: 100,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [colorone, colortwo],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: colorone.withOpacity(0.4),
+                  blurRadius: 12,
+                  offset: const Offset(0, 6),
+                ),
+              ],
+            ),
+            padding: const EdgeInsets.all(12),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                name,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
             ),
           ),
+
+          
           Positioned(
-            top: size.height * -0.01,
-            right: 0,
-            child: Image.asset(image, height: 60),
-          ),
-          Positioned(
-            top: 35,
-            left: 20,
-            child: Text(
-              name,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
+            top: -15,
+            right: -5,
+            child: Container(
+              width: 80,
+              height: 80,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: colorone.withOpacity(0.2),
+                    blurRadius: 25,
+                    spreadRadius: 5,
+                  ),
+                ],
               ),
+            ),
+          ),
+
+        
+          Positioned(
+            top: -20,
+            right: -10,
+            child: Image.asset(
+              image,
+              height: 75,
             ),
           ),
         ],

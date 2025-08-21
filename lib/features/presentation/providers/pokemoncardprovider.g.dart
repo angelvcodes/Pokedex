@@ -6,7 +6,7 @@ part of 'pokemoncardprovider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$pokemonCardsHash() => r'411dd0ed25ff1d5eb35e3e6feb787f4606206e3a';
+String _$pokemonCardsHash() => r'04ff573fc8c55a1c7ebad9ca250edab9a0775465';
 
 /// See also [PokemonCards].
 @ProviderFor(PokemonCards)
