@@ -85,7 +85,7 @@ class CardHome extends StatelessWidget {
 
         
           Positioned(
-            top: -20,
+            top: -15,
             right: -10,
             child: Image.asset(
               image,
